@@ -1,0 +1,43 @@
+from django.db import models
+
+# Create your models here.
+class Fund(models.Model):
+    fund_id = models.CharField(max_length=100, primary_key=True)
+    fund_full_name = models.CharField(max_length=255)
+    ticker = models.CharField(max_length=100)
+    date = models.DateField()
+    statement_of_nav = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    investments = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    listed_securities = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    registered_equities = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    ipo_investment = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    government_bonds = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    corporate_debentures = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    other_government_securities = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    bank_fixed_deposits = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    other_investments = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    current_assets = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    bank_balance = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    other_current_assets = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    current_liabilities = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    net_asset_value_gross = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    fund_management_and_depository_fee1 = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    fund_supervisor_fee1 = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    net_asset_value = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    units_outstanding = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    nav_per_unit = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    income_statement = models.TextField(null=True, blank=True)
+    income = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    realised_income = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    unrealised_income = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    expenses = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    preoperating_expenses = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    notice_publication_fee = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    audit_fee = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    fund_management_and_depositary_fee2 = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    fund_supervisor_fee2 = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    other_expenses = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    net_income = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+
+    def __str__(self):
+        return self.fund_full_name
